@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Home from './pages/home-page/Home';
-import User from './pages/user-page/user';
-import Login from './pages/login-page/login';
+import User from './pages/user-page/User';
+import Login from './pages/login-page/Login';
 // import NotFound from './pages/NotFound';
 
 
