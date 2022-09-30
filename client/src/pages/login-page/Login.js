@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 const Login = () => {
-  const { loading, data } = useQuery(QUERY_MATCHUPS, {
-    fetchPolicy: "no-cache"
-  });
+  // const { loading, data } = useQuery(QUERY_MATCHUPS, {
+  //   fetchPolicy: "no-cache"
+  // });
 
 
 
