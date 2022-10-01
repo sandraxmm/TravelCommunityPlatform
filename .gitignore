@@ -8,6 +8,9 @@
 
 # production
 /build
+/client/build
+/client/node_modules
+.env
 
 # misc
 .DS_Store
