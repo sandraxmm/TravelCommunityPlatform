@@ -84,9 +84,10 @@ const PostForm = () => {
                     <button className='' type='submit'>
                         Post
                     </button>
-
+                    <button className='' type='upload'>
+                        Upload
+                    </button>
                 </div>
-
             </form>
         </div>
     );
