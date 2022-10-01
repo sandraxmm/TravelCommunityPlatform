@@ -11,6 +11,7 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -18,42 +19,39 @@ export const ADD_USER = gql`
       user {
         _id
         username
-        email
       }
     }
   }
 `;
 
-export const SAVE_POST = gql`
-  mutation savePost($input: PostInput) {
-    savePost(input: $input) {
+export const ADD_POST = gql`
+  mutation addPost($postText: String!) {
+    addPost(postText: $postText) {
       _id
-      username
-      savedPosts{
-        postId
-        user
-        description
-        location
-        image
-        likeCount
-  }
-    }
-  }
-`;
-
-export const REMOVE_POST = gql`
-  mutation removePost($input: PostInput) {
-    removedPost (input: $input) {
-      _id
-      username
-      savedPosts {
-        postId
-        user
-        description
-        location
-        image
-        likeCount
+      postText
+      postAuthor
+      createdAt
+      comments {
+        _id
+        commentText
       }
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($thoughtId: ID!, $commentText: String!) {
+    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+      _id
+      thoughtText
+      thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
+
