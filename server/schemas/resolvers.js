@@ -34,7 +34,7 @@ const resolvers = {
             return { token, user };
         },
         // user login
-        login: async (parent, { username, password }) => {
+        loginUser: async (parent, { username, password }) => {
             const user = await User.findOne({ username });
 
             if (!user) {
@@ -51,7 +51,7 @@ const resolvers = {
             return { token, user };
         },
         // create new post
-        createPost: async (parent, { postText, postLocation, postImage}, context) => {
+        addPost: async (parent, { postText, postLocation, postImage}, context) => {
             if (context.user) {
                 const post = await Post.create({
                     postText,
@@ -67,17 +67,16 @@ const resolvers = {
             }
         },
         // create new comment
-        createComment: async (parent, { postId, commentText }, context) => {
+        addComment: async (parent, { postId, commentText }, context) => {
             if (context.user) {
                 return Post.findOneAndUpdate(
                     { _id: postId},
                     { 
-                        $addToSet {
+                        $addToSet: {
                             comments: { commentText, commentAuthor: context.user.username },
                         },
                     },
-                );
-            }
+                )}
         },
         // delete post
         removePost: async (parent, { postId }, context) => {
