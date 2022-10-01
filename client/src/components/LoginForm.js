@@ -1,4 +1,4 @@
-Loginform.js 
+
 
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
@@ -10,5 +10,6 @@ import Auth from '../utils/auth';
 
 const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ email: "", password: "" });
-    const 
+    
 }
+export default LoginForm;
