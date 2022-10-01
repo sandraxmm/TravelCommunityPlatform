@@ -72,13 +72,12 @@ const resolvers = {
                 return Post.findOneAndUpdate(
                     { _id: postId},
                     { 
-                        $addToSet {
-                            comments: { commentText, commentAuthor: context.user.username },
-                        },
+                        $addToSet: 
+                            {comments: commentText, commentAuthor: context.user.username },
                     },
-                );
-            }
-        },
+                )}
+    },
+
         // delete post
         removePost: async (parent, { postId }, context) => {
             if (context.user) {
@@ -93,7 +92,7 @@ const resolvers = {
                 return thought;
             }
         },
-    },
+    },    
 };
 
 module.exports = resolvers;
