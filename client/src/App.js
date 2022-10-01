@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/home-page/Home';
 import User from './pages/user-page/User';
-import Login from './pages/login-page/Login';
+import Timeline from './pages/timeline-page/Timeline';
+import Home from './pages/home-page/Home';
 // import NotFound from './pages/NotFound';
 
 
@@ -28,13 +28,14 @@ function App() {
           
           
           <Routes>
-            <Route 
-              path="/" 
-              element={<Login />}
-            />
+            
             <Route 
               path="/home" 
-              element={<Home />}
+              element={<Home/>}
+            />
+            <Route 
+              path="/timeline" 
+              element={<Timeline />}
             />
             <Route 
               path="/user/:id" 
