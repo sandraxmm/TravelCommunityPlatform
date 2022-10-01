@@ -40,8 +40,8 @@ const Home = () => {
 
         {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
 
-        <form className="post-form">
-
+        <form className="post-form" action='/api/images' method="post" enctype="multipart/form-data">
+      
           <div className="form-group">
 
             <div className="custom-file">
