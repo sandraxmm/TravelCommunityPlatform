@@ -3,36 +3,19 @@ import { useQuery } from '@apollo/client';
 
 
 
+ import Login from '../../components/LoginForm.js';
+import SignupForm from '../../components/SignupForm';
 
 
 
 
-
-
-
-import Login from '../components/ThoughtList';
-import Signup from '../components/ThoughtForm';
-
-
-
-
-
-
-
-
-
-import { QUERY_THOUGHTS } from '../utils/queries';
-
-
-
-
-
+import { QUERY_THOUGHTS } from '../../utils/queries';
 
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
-
+   //const { loading, data } = useQuery(QUERY_THOUGHTS);
+  // const thoughts = data?.thoughts || [];
+const loading = true;
   return (
     <main>
       <div className="flex-row justify-center">
@@ -46,9 +29,9 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <Signup
-              thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
+            <SignupForm
+              // thoughts={thoughts}
+              // title="Some Feed for Thought(s)..."
             />
           )}
         </div>
