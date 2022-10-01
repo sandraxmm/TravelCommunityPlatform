@@ -29,7 +29,7 @@ const Home = () => {
           {/* this will allow you to look for a specific place and it will render all posts mentioning this location */}
           <li className="nav-item">
             <form className="form-inline">
-              <input className="form-control mr-sm-2" type="search" placeholder="Search For Place" aria-label="Search"/>
+              <input className="form-control mr-sm-2" type="search" placeholder="Search For Place" aria-label="Search" />
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </li>
@@ -40,14 +40,14 @@ const Home = () => {
 
         {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
 
-        <form className="post-form">
+        <form className="post-form" action='/api/images' method="post" enctype="multipart/form-data">
 
           <div className="form-group">
 
             <div className="custom-file">
-              <input type="file" className="custom-file-input" id="inputGroupFile01"/>
-                
-  
+              <input type="file" className="custom-file-input" id="inputGroupFile01" />
+
+
               <label className="custom-file-label" htmlFor="inputGroupFile01">upload file</label>
             </div>
 
@@ -63,8 +63,8 @@ const Home = () => {
           {/* this should add the location the post is related to */}
           <div className="form-group">
 
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-              
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
           </div>
