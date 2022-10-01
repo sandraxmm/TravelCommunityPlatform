@@ -2,6 +2,17 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase, faSchool, faStar } from '@fortawesome/free-solid-svg-icons';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
+
+
+
+
 const Timeline = () => {
   // const { loading, data } = useQuery(QUERY_MATCHUPS, {
   //   fetchPolicy: "no-cache"
@@ -15,7 +26,7 @@ const Timeline = () => {
 
 
 
-      
+
 
 
 
@@ -95,6 +106,10 @@ const Timeline = () => {
           {/* Timeline */}
           {/* posts will be rendered according the time and date they were added */}
 
+
+
+
+          
           {/* <div className='container-feed'>
             <figure className="figure">
               <img src="..." className="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
@@ -120,4 +135,4 @@ const Timeline = () => {
   );
 };
 
-export default Time;
+export default Timeline;
