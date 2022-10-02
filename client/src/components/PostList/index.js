@@ -16,7 +16,7 @@ const PostList = ({
             posts.map((post) => (
                 <div key={thought._id} className=''>
                     
-            ))}
+            )}
         </div>
 
     )
