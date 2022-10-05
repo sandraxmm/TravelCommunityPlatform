@@ -8,7 +8,7 @@ import Auth from '../../utils/auth';
 
 const LoginForm = () => {
     const [userFormData, setUserFormData] = useState({ 
-        email: "",
+        username: "",
         password: "",
      });
     const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -35,14 +35,14 @@ const LoginForm = () => {
         }
 
         setUserFormData({
-            email: "",
+            username: "",
             password: "",
         });
     };
 
     return (
       <div class="card bg-white card-rounded w-50">
-        <div class="card-header bg-dark text-center">
+        <div class="card-header text-center">
           <h1>Login Form</h1>
           {data ? (
             <p>
