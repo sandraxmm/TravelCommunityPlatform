@@ -1,5 +1,5 @@
 const Post = require('./post');
-const SignUp = require('./signup');
+const User = require('./user');
 
 
-module.exports = { Post, SignUp };
+module.exports = { Post, User };
