@@ -19,6 +19,10 @@
     "url": "https://github.com/sandraxmm/TravelCommunityPlatform/issues"
   },
   "homepage": "https://github.com/sandraxmm/TravelCommunityPlatform#readme",
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-plugin-react": "^7.31.8"
+  },
   "dependencies": {
     "apollo-server-core": "^3.10.2",
     "apollo-server-express": "^3.10.2",
