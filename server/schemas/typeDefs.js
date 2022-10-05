@@ -1,20 +1,30 @@
 const { gql } = require("apollo-server-express");
 
-// ！means that the field is non-nullable.
 const typeDefs = gql`
   type User {
     _id: ID
     username: String
     email: String
+    password: String
+    post: [Post]!
   }
 
   type Post {
-    postId: String!
-    user: [String]
-    description: String
+    _id: ID
+    postText: String
+    postAuthor: String
+    createdAt: String
     location: String
     image: String
     likeCount: Int
+    comments: [Comment]!
+  }
+
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
   }
 
   type Auth {
@@ -22,22 +32,20 @@ const typeDefs = gql`
     user: User
   }
 
-  input PostInput {
-    PostId: String!
-    user: String
-    description: String
-    image: String
-  }
-
   type Query {
+    users: [User]
+    user(username: String!): User
+    posts(username: String): [Post]
+    post(postId: ID!): Post
     me: User
   }
 
   type Mutation {
-    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    savePost(input: PostInput): User
-    removePost(PostId: String!): User
+    loginUser(email: String!, password: String!): Auth
+    addPost(postText: String!): Post
+    addComment(postId: ID!, commentText: String!): Post
+    removePost(PostId: ID!): Post
   }
 `;
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/home-page/Home';
 import User from './pages/user-page/User';
-import Login from './pages/login-page/Login';
+import Timeline from './pages/timeline-page/Timeline';
+import Home from './pages/home-page/Home';
 // import NotFound from './pages/NotFound';
 
 
@@ -23,18 +23,20 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+       <h1>Travel Community Platform</h1>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           
           
           
           <Routes>
+            
             <Route 
               path="/" 
-              element={<Login />}
+              element={<Home/>}
             />
             <Route 
-              path="/home" 
-              element={<Home />}
+              path="/timeline" 
+              element={<Timeline />}
             />
             <Route 
               path="/user/:id" 
