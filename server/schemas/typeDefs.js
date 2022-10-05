@@ -16,7 +16,6 @@ const typeDefs = gql`
     createdAt: String
     location: String
     image: String
-    likeCount: Int
     comments: [Comment]!
   }
 
