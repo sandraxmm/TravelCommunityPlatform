@@ -36,7 +36,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <h1>HELLO</h1>
+       <h1>Travel Community Platform</h1>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           
           
