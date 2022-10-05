@@ -19,7 +19,15 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, './client/build')));
 }
 
-app. get('/', (req, res) => {
+app.post('/signup', (req, res) => {
+    console.log(req.body.username)
+    console.log(req.body.email)
+    console.log(req.body.password)
+});
+
+
+
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './client/build/index.html')); 
 });
 
