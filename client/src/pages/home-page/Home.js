@@ -4,11 +4,6 @@ import Login from '../login-page/LoginForm';
 import SignupForm from '../signup-page/SignupForm';
 
 
-
-
-import { QUERY_THOUGHTS } from '../../utils/queries';
-
-
 const Home = () => {
   //const { loading, data } = useQuery(QUERY_THOUGHTS);
   // const thoughts = data?.thoughts || [];

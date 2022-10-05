@@ -6,7 +6,6 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-        match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     username: {
         type: String,
@@ -19,6 +18,12 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post',
+      }
+    ]
 });
 
 userSchema.pre('save', async function (next) {
