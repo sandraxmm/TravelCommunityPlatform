@@ -15,7 +15,7 @@ const resolvers = {
         // pulling post with specific location
         posts: async (parent, { _location }) => {
             const params = _location ? { _location } : {};
-            return Post.find(params).populate(['comments', 'likes']);
+            return Post.find(params).populate('comments');
         },
         // pulling profile for spefic user after login
         me: async (parent, args, context) => {
