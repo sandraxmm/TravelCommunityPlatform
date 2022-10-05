@@ -44,11 +44,11 @@ const SignupForm = () => {
 
   return (
     <div class="card bg-white card-rounded w-50">
-      <div class="card-header bg-dark text-center">
+      <div class="card-header text-center">
         <h1>Sign up Form</h1>
         {data ? (
           <p>
-            Success! You may now head <Link to="/"> back to the homepage.</Link>
+            Success! You may now login <Link to="/"> back to the homepage.</Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>
