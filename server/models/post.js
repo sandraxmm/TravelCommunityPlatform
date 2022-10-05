@@ -12,8 +12,40 @@ const postSchema = new Schema({
     },
     caption: {
         type: String,
-        required: false,
+        required: 'Please type a caption!',
+        minlength: 1, 
+        maxlength: 300,
+        trim: true,
     },
+    user: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    createdAt: {
+        type: Date, 
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
+    },
+    comments: [
+        {
+          commentText: {
+            type: String,
+            required: true,
+            minlength: 1,
+            maxlength: 280,
+          },
+          commentUser: {
+            type: String,
+            required: true,
+          },
+          createdAt: {
+            type: Date,
+            default: Date.now,
+            get: (timestamp) => dateFormat(timestamp),
+          },
+        },
+      ],
 });
 
 const Post = model('Post', postSchema);
