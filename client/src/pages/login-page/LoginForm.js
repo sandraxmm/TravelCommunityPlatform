@@ -4,9 +4,25 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
 
+
+
+import { useNavigate } from "react-router-dom";
+
+
+
+
+
 import Auth from '../../utils/auth';
 
 const LoginForm = () => {
+
+
+  const navigate = useNavigate();
+
+
+
+
+
     const [userFormData, setUserFormData] = useState({ 
         username: "",
         password: "",
@@ -29,15 +45,29 @@ const LoginForm = () => {
             const { data } = await login({
                 variables: { ...userFormData },
             });
-            Auth.login(data.login.token);
+            console.log(data)
+            Auth.login(data.loginUser.token);
+
+
+
+ setUserFormData({
+            username: "",
+            password: "",
+        });
+
+            navigate("/timeline");
+
+
+
+
+
+
+
         } catch (e) {
             console.error(e);
         }
 
-        setUserFormData({
-            username: "",
-            password: "",
-        });
+       
     };
 
     return (
