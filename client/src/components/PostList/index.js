@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostList = ({
     posts,
@@ -6,7 +7,7 @@ const PostList = ({
     showLocation = true,
     showUsername = true,
 }) => {
-    if (!posts.lengh) {
+    if (!posts.length) {
         return <h3>No Posts Yet</h3>;
     }
     return (
@@ -40,3 +41,5 @@ const PostList = ({
         </div>
     );
 };
+
+export default PostList;

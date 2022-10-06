@@ -11,6 +11,10 @@ import { setContext } from '@apollo/client/link/context';
 import User from './pages/user-page/User';
 import Timeline from './pages/timeline-page/Timeline';
 import Home from './pages/home-page/Home';
+ 
+
+
+
 
 // GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -32,12 +36,20 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
+
+
+
+
+
+
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
        <h1>Travel Community Platform</h1>
-        <div className="flex-column justify-center align-center min-100-vh bg-primary">
+        <div className="flex-column justify-center align-center min-100-vh ">
           
           
           
@@ -52,7 +64,7 @@ function App() {
               element={<Timeline />}
             />
             <Route 
-              path="/user/:id" 
+              path="/user" 
               element={<User/>}
             />
 
