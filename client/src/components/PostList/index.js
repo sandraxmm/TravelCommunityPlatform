@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostList = ({
     posts,
@@ -40,3 +41,5 @@ const PostList = ({
         </div>
     );
 };
+
+export default PostList;
