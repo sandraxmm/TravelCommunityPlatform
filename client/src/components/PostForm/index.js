@@ -57,7 +57,8 @@ const PostForm = () => {
 
     return (
         <div className={`${characterCount === 300 || error ? 'text-danger' : ''}`}>
-            <form className='' onSubmit={handleFormSubmit}>
+            <form className='flex-row justify-center justify-space-between-md align-center' 
+                    onSubmit={handleFormSubmit}>
                 <div className=''>
                     <textarea
                         name='postText'
@@ -66,7 +67,7 @@ const PostForm = () => {
                         className=''
                         style={{ lineHeight: '1.5', resize: 'vertical' }}
                         onChange={handleChange}
-                        characterCount='300'
+                        charactercount='300'
                     ></textarea>
                 </div>
                 <div className=''>
@@ -77,14 +78,14 @@ const PostForm = () => {
                         className=''
                         style={{ lineHeight: '1.5', resize: 'vertical' }}
                         onChange={handleChange}
-                        characterCount='50'
+                        charactercount='50'
                     ></textarea>
                 </div>
                 <div className=''>
-                    <button className='' type='submit'>
+                    <button className='btn btn-info' type='submit'>
                         Post
                     </button>
-                    <button className='' type='upload'>
+                    <button className='btn btn-info' type='upload'>
                         Upload
                     </button>
                 </div>
