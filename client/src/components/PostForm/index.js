@@ -103,11 +103,8 @@ const [imageSelected, setImageSelected] = useState();
                     <button className='btn btn-info' type='submit'>
                         Post
                     </button>
-                    <input className='upload' 
-                    type='file'
-                    onChange={(event) => {
-                        setImageSelected(event.target.files[0]);
-                    }}
+                    <input name='image' 
+                    type='file' onChange={} value= 
                     />
                     <button onClick={uploadImage}> Upload </button>
                 </div>
