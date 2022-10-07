@@ -6,7 +6,6 @@ import PostForm from '../../components/PostForm/index'
 
 
 const Timeline = () => {
-<<<<<<< HEAD
   // const { loading, data } = useQuery(QUERY_MATCHUPS, {
   //   fetchPolicy: "no-cache"
   // });
@@ -26,11 +25,6 @@ const Timeline = () => {
     { icon: schoolIcon, date: '2002 - 2006', title: 'Bachelor of Science in Interactive Digital Media Visual Imaging', subtitle: 'Bachelor Degree', desc: 'Creative Direction, Visual Design' },
     { icon: starIcon }
   ];
-
-
-
-=======
->>>>>>> develop
 
 
   return (
@@ -58,7 +52,6 @@ const Timeline = () => {
         </ul>
       </div>
 
-<<<<<<< HEAD
       <div className='card text-center  '>
         {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
         <div>
@@ -79,12 +72,6 @@ const Timeline = () => {
               </div>
 
             </div>
-
-
-
-
-=======
->>>>>>> develop
 
 
       {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
