@@ -87,9 +87,9 @@ const resolvers = {
                 });
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { posts: thought._id } }
+                    { $pull: { posts: post._id } }
                 );
-                return thought;
+                return post;
             }
         },
     },    

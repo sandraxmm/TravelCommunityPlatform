@@ -20,8 +20,10 @@
     "url": "https://github.com/sandraxmm/TravelCommunityPlatform/issues"
   },
   "homepage": "https://github.com/sandraxmm/TravelCommunityPlatform#readme",
-
   "devDependencies": {
     "concurrently": "^7.4.0"
+  },
+  "dependencies": {
+    "cloudinary-react": "^1.8.1"
   }
 }
