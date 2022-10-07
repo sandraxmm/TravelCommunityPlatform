@@ -8,6 +8,7 @@ import { QUERY_POSTS } from '../../utils/queries';
 
 const Timeline = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
+  console.log(data);
   const posts = data?.posts || [];
 
   return (

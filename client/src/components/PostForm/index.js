@@ -9,7 +9,7 @@ import Auth from '../../utils/auth';
 
 const PostForm = () => {
     const [postText, setPostText] = useState('');
-    const [postLocation, setPostLocation] = useState ('');
+    const [postLocation, setPostLocation] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     const [addPost, { error }] = useMutation(ADD_POST, {
         update(cache, { data: { addPost } }) {
@@ -51,6 +51,9 @@ const PostForm = () => {
         const { name, value } = event.target;
         if (name === 'postText' && value.length <= 300) {
             setPostText(value);
+            setCharacterCount(value.length);
+        } else if (name === 'postLocation' && value.length <= 50) {
+            setPostLocation(value);
             setCharacterCount(value.length);
         }
     };
