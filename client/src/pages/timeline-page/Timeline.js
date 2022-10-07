@@ -42,6 +42,9 @@ const Timeline = () => {
   //   fetchPolicy: "no-cache"
   // });
 
+  const uploadImage = (files) => {
+    console.log(files[0]);
+  }
 
 
   const timeline = [
@@ -111,7 +114,11 @@ const Timeline = () => {
             <div className="form-group">
 
               <div className="custom-file">
-                <input type="file" className="custom-file-input" id="inputGroupFile01" />
+                <input type="file" className="custom-file-input" id="inputGroupFile01" 
+                onChange={(event)=> {
+                  uploadImage(event.target.files);
+                  }} 
+                  />
 
 
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">upload picture</button>
