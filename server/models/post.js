@@ -13,10 +13,17 @@ const postSchema = new Schema({
     },
     postText: {
         type: String,
-        required: 'Please add your text here',
+        required: true,
         minlength: 1, 
         maxlength: 300,
         trim: true,
+    },
+    postLocation: {
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 50,
+      trim: true,
     },
     postAuthor: {
         type: String,
