@@ -1,28 +1,23 @@
 import React from 'react';
-//import { useQuery } from '@apollo/client';
 import Login from '../login-page/LoginForm';
 import SignupForm from '../signup-page/SignupForm';
-
-
+import { useQuery } from '@apollo/client';
+import { QUERY_THOUGHTS } from '../utils/queries';
 const Home = () => {
-  //const { loading, data } = useQuery(QUERY_THOUGHTS);
-  // const thoughts = data?.thoughts || [];
   const loading = true;
   return (
     <main className='container flex-row justify-center'>
       <div className=" form flex-row justify-center">
         <div className="col-12 col-md-8 mb-3" >
 
-          <Login />
+          <Login/>
 
         </div>
      
 
         <div className="col-12 col-md-8 mb-3 ">
 
-          <SignupForm
-
-          />
+          <SignupForm/>
 
         </div>
       </div>

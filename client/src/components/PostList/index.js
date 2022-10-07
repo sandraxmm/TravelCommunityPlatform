@@ -15,7 +15,7 @@ const PostList = ({
             {showLocation && <h3>{postlocation}</h3>}
             {posts &&
                 posts.map((post) => (
-                <div key={thought._id} className=''>
+                <div key={post._id} className=''>
                     <h4 className=''>
                         {showUsername ? (
                             <Link className='' to={`/profiles/${post.postAuthor}`}>
