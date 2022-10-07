@@ -6,6 +6,10 @@ import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
+import Axios from 'axios';
+
+import {Image} from 'cloudinary-react';
+
 
 const PostForm = () => {
     const [postText, setPostText] = useState('');
@@ -55,6 +59,20 @@ const PostForm = () => {
         }
     };
 
+const [imageSelected, setImageSelected] = useState();
+
+    const uploadImage = () => {
+        const formData= new FormData()
+        formData.append('file', imageSelected)
+        formData.append('upload_preset', 'b5saqj0f')
+
+        Axios.post('https://api.cloudinary.com/v1_1/dk8rcb4sl/image/upload', formData)
+        .then((response) => {
+            console.log(response);
+        });
+    };
+
+
     return (
         <div className={`${characterCount === 300 || error ? 'text-danger' : ''}`}>
             <form className='flex-row justify-center justify-space-between-md align-center' 
@@ -85,11 +103,17 @@ const PostForm = () => {
                     <button className='btn btn-info' type='submit'>
                         Post
                     </button>
-                    <button className='btn btn-info' type='upload'>
-                        Upload
-                    </button>
+                    <input className='upload' 
+                    type='file'
+                    onChange={(event) => {
+                        setImageSelected(event.target.files[0]);
+                    }}
+                    />
+                    <button onClick={uploadImage}> Upload </button>
                 </div>
             </form>
+
+            <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/>
         </div>
     );
 };
