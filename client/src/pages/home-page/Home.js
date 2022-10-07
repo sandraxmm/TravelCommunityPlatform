@@ -2,7 +2,7 @@ import React from 'react';
 import Login from '../login-page/LoginForm';
 import SignupForm from '../signup-page/SignupForm';
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_THOUGHTS } from '../utils/queries.js';
 const Home = () => {
   const loading = true;
   return (

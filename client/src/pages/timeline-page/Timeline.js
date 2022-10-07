@@ -28,7 +28,7 @@ const Timeline = () => {
 
 
   return (
-    <div className="container">
+    `<div className="container">
       <div className="navbar navbar-light bg-light">
         <ul className="nav nav-pills">
 
@@ -70,8 +70,10 @@ const Timeline = () => {
 
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">upload picture</button>
               </div>
-
             </div>
+        </div>
+
+      </div>
 
 
       {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
@@ -85,7 +87,7 @@ const Timeline = () => {
           </div>
 
         </div>
-
+      </div>
 
         {/* Timeline */}
         {/* posts will be rendered according the time and date they were added */}
@@ -100,22 +102,8 @@ const Timeline = () => {
           </div>
 
         </div>
-      </div>
+      </div>`
 
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  );
-};
+  )};
 
 export default Timeline;
