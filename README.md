@@ -32,4 +32,3 @@ https://github.com/sandraxmm/TravelCommunityPlatform
 - [@sandraxmm](https://github.com/sandraxmm)
 - [@javiFmorales](https://github.com/javiFmorales)
 - [@jennyferconstanza](https://github.com/jennyferconstanza)
-
