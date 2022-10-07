@@ -1,43 +1,12 @@
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_POSTS } from '../../utils/queries';
 
-
-import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faBriefcase, faSchool, faStar, faFaceKissWinkHeart ,faDrum} from '@fortawesome/free-solid-svg-icons';
-import * as Icon from '@fortawesome/free-solid-svg-icons';
-
-import React, {Component} from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-
-
-const workIcon = {
-  icon: <FontAwesomeIcon icon={Icon.faBriefcase} />,
-  iconStyle: { background: 'rgb(33, 150, 243)', color: '#fff' }
-};
-const schoolIcon = {
-  icon: <FontAwesomeIcon icon={Icon.faSchool} />,
-  iconStyle: { background: 'rgb(233, 30, 99)', color: '#fff' }
-};
-const starIcon = {
-  icon: <FontAwesomeIcon icon={Icon.faStar} />,
-  iconStyle: { background: 'rgb(16, 204, 82)', color: '#fff' }
-};
-const kissyFaceIcon = {
-  icon: <FontAwesomeIcon icon={Icon.faFaceKissWinkHeart} />,
-  iconStyle: { background: 'rgb(16, 204, 82)', color: '#fff' }
-};
-const drumIcon = {
-  icon: <FontAwesomeIcon icon={Icon.faDrum} />,
-  iconStyle: { background: 'rgb(16, 204, 82)', color: '#fff' }
-};
-
+import React from 'react';
+import PostList from '../../components/PostList/index'
+import PostForm from '../../components/PostForm/index'
 
 
 
 const Timeline = () => {
+<<<<<<< HEAD
   // const { loading, data } = useQuery(QUERY_MATCHUPS, {
   //   fetchPolicy: "no-cache"
   // });
@@ -60,23 +29,16 @@ const Timeline = () => {
 
 
 
+=======
+>>>>>>> develop
 
 
   return (
     <div className="container">
       <div className="navbar navbar-light bg-light">
-
-
-
-
-
-
-
-
         <ul className="nav nav-pills">
+
           {/* this will contain our icon */}
-
-
           <li className="nav-item">
             <img className="" src="#" alt=''></img>
           </li>
@@ -93,18 +55,10 @@ const Timeline = () => {
             <a className="nav-link" href="#">Profile</a>
           </li>
 
-
-          {/* this will allow you to look for a specific place and it will render all posts mentioning this location */}
-          <li className="nav-item">
-            <form className="form-inline">
-              <input className="form-control mr-sm-2" type="search" placeholder="Search For Location" aria-label="Search" />
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </li>
-
         </ul>
       </div>
 
+<<<<<<< HEAD
       <div className='card text-center  '>
         {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
         <div>
@@ -129,106 +83,48 @@ const Timeline = () => {
 
 
 
+=======
+>>>>>>> develop
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-            {/* This will contain the caption/text */}
-            <div className="form-group">
-
-              <label htmlFor="exampleFormControlTextarea1">Add a caption</label>
-              <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-
-            {/* this should add the location the post is related to */}
-            <div className="form-group">
-
-              <input className="form-control mr-sm-2" type="search" placeholder="Add Location to your Post" aria-label="Search" />
-
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-
-            </div>
-
-            <button type='submit'>Post</button>
-
-          </form>
-
-
-
-
-
-
-
-
-
-
-
-          {/* Timeline */}
-          {/* posts will be rendered according the time and date they were added */}
-
-          {/* return ( */}
-          <div className="App">
-            <h3>TIMELINE </h3>
-            <VerticalTimeline>
-              {timeline.map((t, i) => {
-                const contentStyle = i === 0 ? { background: 'rgb(33, 150, 243)', color: '#fff' } : undefined;
-                const arrowStyle = i === 0 ? { borderRight: '7px solid  rgb(33, 150, 243)' } : undefined;
-
-                return <VerticalTimelineElement
-                  key={i}
-                  className="vertical-timeline-element--work"
-                  contentStyle={contentStyle}
-                  contentArrowStyle={arrowStyle}
-                  date={t.date}
-                  {...t.icon}
-                >
-                  {t.title ? <React.Fragment>
-                    <h3 className="vertical-timeline-element-title">{t.title}</h3>
-                    {t.subtitle && <h4 className="vertical-timeline-element-subtitle">{t.subtitle}</h4>}
-                    {t.desc && <p>{t.desc}</p>}
-                  </React.Fragment> : undefined}
-                </VerticalTimelineElement>
-              })}
-            </VerticalTimeline>
+      {/* form to create posts, it contains options to upload a picture, add a caption or a piece of text and  option to add location  */}
+      <div className='card text-center  '>
+        <div className="flex-row justify-center">
+          <div
+            className="col-12 col-md-10 mb-3 p-3"
+            style={{ border: '1px dotted #1a1a1a' }}
+          >
+            <PostForm />
           </div>
-          {/* ) */}
 
-
-
-
-
-
-
-
-          {/* <div className='container-feed'>
-            <figure className="figure">
-              <img src="..." className="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-              </img>
-              <figcaption className="figure-caption">The caption will go here.</figcaption>
-            </figure>
-          </div> */}
         </div>
 
 
+        {/* Timeline */}
+        {/* posts will be rendered according the time and date they were added */}
 
 
+        <div className="flex-row justify-center">
+          <div
+            className="col-12 col-md-10 mb-3 p-3"
+            style={{ border: '1px dotted #1a1a1a' }}
+          >
+            {/* <PostList /> */}
+          </div>
 
-
+        </div>
       </div>
 
+    </div>
 
 
-    </div >
+
+
+
+
+
+
+
 
 
 

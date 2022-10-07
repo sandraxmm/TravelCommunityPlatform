@@ -22,7 +22,7 @@ const PostForm = () => {
             } catch (err) {
                 console.error(err);
             }
-            const { me } = catche.readQueary({ query: QUERY_ME });
+            const { me } = cache.readQueary({ query: QUERY_ME });
             cache.writeQuery({
                 query: QUERY_ME,
                 data: { me: { ...me, posts: [...me.posts, addPost] } },
