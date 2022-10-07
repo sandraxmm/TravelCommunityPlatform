@@ -1,13 +1,9 @@
 import React from 'react';
 import Login from '../login-page/LoginForm';
 import SignupForm from '../signup-page/SignupForm';
-<<<<<<< HEAD
-import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries.js';
-=======
 //import { useQuery } from '@apollo/client';
 //import { QUERY_THOUGHTS } from '../utils/queries';
->>>>>>> develop
+
 const Home = () => {
   //const loading = true;
   return (
