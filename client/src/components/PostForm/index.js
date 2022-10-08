@@ -106,49 +106,49 @@ const handleFileInputChange = (e) => {
       });
   };
 
-  return (
-    <div className={`${characterCount === 300 || error ? "text-danger" : ""}`}>
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="col-12 col-lg-9">
-          <textarea
-            name="postText"
-            placeholder="Create a new post"
-            value={postText}
-            className="form-input w-100"
-            style={{ lineHeight: "1.5", resize: "vertical" }}
-            onChange={handleChange}
-            charactercount="300"
-          ></textarea>
-        </div>
-        <div className="col-12 col-lg-9">
-          <textarea
-            name="postLocation"
-            placeholder="Add location"
-            value={postLocation}
-            className="form-input w-100"
-            style={{ lineHeight: "1.5", resize: "vertical" }}
-            onChange={handleChange}
-            charactercount="50"
-          ></textarea>
-        </div>
-        <div className="col-12 col-lg-3">
-          <button className="btn btn-info" type="submit">
-            Post
-          </button>
-          <input
-            className="upload"
-            type="file"
-            onChange={(event) => {
-              setImageSelected(event.target.files[0]);
-            }}
-          />
-          <button className="btn btn-info" onClick={uploadImage}>
-            {" "}
-            Upload{" "}
-          </button>
+//   return (
+//     <div className={`${characterCount === 300 || error ? "text-danger" : ""}`}>
+//       <form
+//         className="flex-row justify-center justify-space-between-md align-center"
+//         onSubmit={handleFormSubmit}
+//       >
+//         <div className="col-12 col-lg-9">
+//           <textarea
+//             name="postText"
+//             placeholder="Create a new post"
+//             value={postText}
+//             className="form-input w-100"
+//             style={{ lineHeight: "1.5", resize: "vertical" }}
+//             onChange={handleChange}
+//             charactercount="300"
+//           ></textarea>
+//         </div>
+//         <div className="col-12 col-lg-9">
+//           <textarea
+//             name="postLocation"
+//             placeholder="Add location"
+//             value={postLocation}
+//             className="form-input w-100"
+//             style={{ lineHeight: "1.5", resize: "vertical" }}
+//             onChange={handleChange}
+//             charactercount="50"
+//           ></textarea>
+//         </div>
+//         <div className="col-12 col-lg-3">
+//           <button className="btn btn-info" type="submit">
+//             Post
+//           </button>
+//           <input
+//             className="upload"
+//             type="file"
+//             onChange={(event) => {
+//               setImageSelected(event.target.files[0]);
+//             }}
+//           />
+//           <button className="btn btn-info" onClick={uploadImage}>
+//             {" "}
+//             Upload{" "}
+//           </button>
     return (
         <div className={`${characterCount === 300 || error ? 'text-danger' : ''}`}>
             <form className='flex-row justify-center justify-space-between-md align-center' 
@@ -198,7 +198,6 @@ const handleFileInputChange = (e) => {
       {/* <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/> */}
       <Image style={{ width: 200 }} cloudName="dk8rcb4sl" publicId="" />
     </div>
-  );
-};
+  ) };
 
 export default PostForm;
