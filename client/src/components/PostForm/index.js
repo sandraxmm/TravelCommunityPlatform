@@ -5,10 +5,6 @@ import { useMutation } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
 import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
-import Auth from '../../utils/auth';
-import Axios from 'axios';
-
-import {Image} from 'cloudinary-react';
 
 
 const PostForm = () => {
@@ -34,22 +30,24 @@ const PostForm = () => {
         },
     });
 
-    const handleFormSubmit = async (event) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
-        try {
-            const { data } = await addPost({
-                variables: {
-                    postText,
-                    postAuthor: Auth.getProfile().data.username,
-                    postLocation,
-                },
-            });
-            setPostText('');
-            setPostLocation('');
-        } catch (err) {
-            console.error(err);
-        }
+        if(!previewSource) return;
+        uploadImage(previewSource);
     };
+
+    const uploadImage = async (base64EncodedImage) => {
+        console.log(base64EncodedImage);
+        try {
+            await fetch ('/api/upload', {
+                method: 'POST',
+                body: JSON.stringify({data: base64EncodedImage}),
+                headers: {'Content-type': 'application/json'}
+            })
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -59,17 +57,22 @@ const PostForm = () => {
         }
     };
 
-const [imageSelected, setImageSelected] = useState();
 
-    const uploadImage = () => {
-        const formData= new FormData()
-        formData.append('file', imageSelected)
-        formData.append('upload_preset', 'b5saqj0f')
+const [fileInputState, setFileInputState] = useState('');
+const [previewSource, setPreviewSource ] = useState('');
+const [selectedFile, setSelectedFile] = useState('');
+    
+const handleFileInputChange = (e) => {
+        const file = e.target.files[0];
+        previewFile(file);
+    };
 
-        Axios.post('https://api.cloudinary.com/v1_1/dk8rcb4sl/image/upload', formData)
-        .then((response) => {
-            console.log(response);
-        });
+    const previewFile = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setPreviewSource(reader.result);
+        };
     };
 
 
@@ -104,13 +107,19 @@ const [imageSelected, setImageSelected] = useState();
                         Post
                     </button>
                     <input name='image' 
-                    type='file' onChange={} value= 
+                    type='file' onChange={handleFileInputChange} value={fileInputState} className='form-input'
                     />
-                    <button onClick={uploadImage}> Upload </button>
+                    <button type='submit'> Upload </button>
                 </div>
             </form>
 
-            <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/>
+            {previewSource && (
+                <img src={previewSource} alt='chosen'
+                style={{height: '300px' }}
+                />
+            )}
+
+            {/* <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/> */}
         </div>
     );
 };
