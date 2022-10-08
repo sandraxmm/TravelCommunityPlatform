@@ -2,6 +2,7 @@
     {
         "postText": "Hello from Greece!",
         "postAuthor": "aleenaalexia",
+        "postLocation": "Greece",
         "comments": [
             {
                 "commentText": "I love Santorini!",
@@ -12,6 +13,7 @@
     {
         "postText": "Welcome to Paris!! <3",
         "postAuthor": "exampleuser123",
+        "postLocation": "Paris",
         "comments": [
             {
                 "commentText": "Wow, this is beautiful!",
