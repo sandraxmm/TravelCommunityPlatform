@@ -82,7 +82,6 @@ const handleFileInputChange = (e) => {
     formData.append("file", imageSelected);
     formData.append("upload_preset", "b5saqj0f");
 
-  };
     return (
         <div className={`${characterCount === 300 || error ? 'text-danger' : ''}`}>
             <form className='flex-row justify-center justify-space-between-md align-center' 
@@ -126,6 +125,7 @@ const handleFileInputChange = (e) => {
                 />
             )}
     </div>
-  );
+  )
+            };
 
 export default PostForm;
