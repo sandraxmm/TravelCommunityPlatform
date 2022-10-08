@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { useMutation } from "@apollo/client";
+import { useMutation } from '@apollo/client';
 
-import { ADD_POST } from "../../utils/mutations";
-import { QUERY_POSTS, QUERY_ME } from "../../utils/queries";
+import { ADD_POST } from '../../utils/mutations';
+import { QUERY_POSTS, QUERY_ME } from '../../utils/queries';
 
 
-import { Image } from "cloudinary-react";
 
 const PostForm = () => {
     const [postText, setPostText] = useState('');
@@ -78,12 +77,7 @@ const handleFileInputChange = (e) => {
             setPreviewSource(reader.result);
         };
     };
-  };
-  const uploadImage = () => {
-    const formData = new FormData();
-    formData.append("public_id", "sample_image");
-    formData.append("file", imageSelected);
-    formData.append("upload_preset", "b5saqj0f");
+
 
     return (
         <div className={`${characterCount === 300 || error ? 'text-danger' : ''}`}>
@@ -127,8 +121,10 @@ const handleFileInputChange = (e) => {
                 style={{height: '300px' }}
                 />
             )}
-    </div>
-  )
-            };
+
+            {/* <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/> */}
+        </div>
+    );
+};
 
 export default PostForm;
