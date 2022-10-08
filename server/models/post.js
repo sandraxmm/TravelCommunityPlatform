@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema({
-    image: {
+    imageSelected: {
         name: String,
         desc: String,
         img:
