@@ -25,7 +25,7 @@ const PostList = ({
     }, [])
     if (!posts.length) {
         return <h3>No Posts Yet</h3>;
-    }  
+    } 
     return (
         <div>
             {showLocation && <h3>{postlocation}</h3>}
