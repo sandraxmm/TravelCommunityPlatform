@@ -15,7 +15,6 @@ const typeDefs = gql`
     postAuthor: String
     createdAt: String
     postLocation: String
-    image: String
     comments: [Comment]!
   }
 
