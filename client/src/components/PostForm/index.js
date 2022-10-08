@@ -5,8 +5,6 @@ import { useMutation } from "@apollo/client";
 import { ADD_POST } from "../../utils/mutations";
 import { QUERY_POSTS, QUERY_ME } from "../../utils/queries";
 
-import Auth from "../../utils/auth";
-import Axios from "axios";
 
 import { Image } from "cloudinary-react";
 
@@ -77,16 +75,6 @@ const handleFileInputChange = (e) => {
             setPreviewSource(reader.result);
         };
     };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    if (name === "postText" && value.length <= 300) {
-      setPostText(value);
-      setCharacterCount(value.length);
-    } else if (name === "postLocation" && value.length <= 50) {
-      setPostLocation(value);
-      setCharacterCount(value.length);
-    }
   };
   const uploadImage = () => {
     const formData = new FormData();
@@ -94,61 +82,7 @@ const handleFileInputChange = (e) => {
     formData.append("file", imageSelected);
     formData.append("upload_preset", "b5saqj0f");
 
-    Axios.post(
-      "https://api.cloudinary.com/v1_1/dk8rcb4sl/image/upload",
-      formData
-    )
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
-
-//   return (
-//     <div className={`${characterCount === 300 || error ? "text-danger" : ""}`}>
-//       <form
-//         className="flex-row justify-center justify-space-between-md align-center"
-//         onSubmit={handleFormSubmit}
-//       >
-//         <div className="col-12 col-lg-9">
-//           <textarea
-//             name="postText"
-//             placeholder="Create a new post"
-//             value={postText}
-//             className="form-input w-100"
-//             style={{ lineHeight: "1.5", resize: "vertical" }}
-//             onChange={handleChange}
-//             charactercount="300"
-//           ></textarea>
-//         </div>
-//         <div className="col-12 col-lg-9">
-//           <textarea
-//             name="postLocation"
-//             placeholder="Add location"
-//             value={postLocation}
-//             className="form-input w-100"
-//             style={{ lineHeight: "1.5", resize: "vertical" }}
-//             onChange={handleChange}
-//             charactercount="50"
-//           ></textarea>
-//         </div>
-//         <div className="col-12 col-lg-3">
-//           <button className="btn btn-info" type="submit">
-//             Post
-//           </button>
-//           <input
-//             className="upload"
-//             type="file"
-//             onChange={(event) => {
-//               setImageSelected(event.target.files[0]);
-//             }}
-//           />
-//           <button className="btn btn-info" onClick={uploadImage}>
-//             {" "}
-//             Upload{" "}
-//           </button>
     return (
         <div className={`${characterCount === 300 || error ? 'text-danger' : ''}`}>
             <form className='flex-row justify-center justify-space-between-md align-center' 
@@ -191,13 +125,7 @@ const handleFileInputChange = (e) => {
                 style={{height: '300px' }}
                 />
             )}
-
-            {/* <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/> */}
-        </div>
-      </form>
-      {/* <Image style={{width:200}} cloudName='dk8rcb4sl' publicId='https://res.cloudinary.com/dk8rcb4sl/image/upload/v1665115588/bwv886mltk9hxfdy6v4m.webp'/> */}
-      <Image style={{ width: 200 }} cloudName="dk8rcb4sl" publicId="" />
     </div>
-  ) };
+  );
 
 export default PostForm;
