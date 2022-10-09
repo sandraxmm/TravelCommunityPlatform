@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-  mutation loginUser($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+  mutation loginUser($username: String!, $password: String!) {
+    loginUser(username: $username, password: $password) {
       token
       user {
         _id
@@ -25,11 +25,13 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_POST = gql`
-  mutation addPost($postText: String!) {
-    addPost(postText: $postText) {
+  mutation addPost($postText: String!, $postLocation: String!) {
+    addPost(postText: $postText, postLocation: $postLocation, fileInputeState: $fileInputState) {
       _id
       postText
+      postLocation
       postAuthor
+      fileInputState
       createdAt
       comments {
         _id
@@ -40,11 +42,12 @@ export const ADD_POST = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+  mutation addComment($postId: ID!, $commentText: String!) {
+    addComment(postId: $postId, commentText: $commentText) {
       _id
-      thoughtText
-      thoughtAuthor
+      postText
+      postAuthor
+      postLocation
       createdAt
       comments {
         _id

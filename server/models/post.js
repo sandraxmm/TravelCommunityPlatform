@@ -1,23 +1,31 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema({
-    image: {
+    fileInputState: {
         name: String,
         desc: String,
-        img:
+        setFileInputState:
         {
             data: Buffer,
             contentType: String
         }
     },
-    caption: {
+    postText: {
         type: String,
-        required: 'Please type a caption!',
+        required: true,
         minlength: 1, 
         maxlength: 300,
         trim: true,
     },
-    user: {
+    postLocation: {
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 50,
+      trim: true,
+    },
+    postAuthor: {
         type: String,
         required: true,
         trim: true,
@@ -35,7 +43,7 @@ const postSchema = new Schema({
             minlength: 1,
             maxlength: 280,
           },
-          commentUser: {
+          commentAuthor: {
             type: String,
             required: true,
           },

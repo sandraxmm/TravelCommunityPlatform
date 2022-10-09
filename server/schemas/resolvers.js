@@ -15,7 +15,7 @@ const resolvers = {
         // pulling post with specific location
         posts: async (parent, { _location }) => {
             const params = _location ? { _location } : {};
-            return Post.find(params).populate(['comments', 'likes']);
+            return Post.find(params).populate('comments');
         },
         // pulling profile for spefic user after login
         me: async (parent, args, context) => {
@@ -51,12 +51,12 @@ const resolvers = {
             return { token, user };
         },
         // create new post
-        addPost: async (parent, { postText, postLocation, postImage}, context) => {
+        addPost: async (parent, { postText, postLocation, fileInputState}, context) => {
             if (context.user) {
                 const post = await Post.create({
                     postText,
                     postLocation,
-                    postImage,
+                    fileInputState,
                     postAuthor: context.user.username,
                 });
                 await User.findOneAndUpdate(
@@ -87,9 +87,9 @@ const resolvers = {
                 });
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { posts: thought._id } }
+                    { $pull: { posts: post._id } }
                 );
-                return thought;
+                return post;
             }
         },
     },    
