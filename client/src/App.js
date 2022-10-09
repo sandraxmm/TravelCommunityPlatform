@@ -14,7 +14,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SignupForm from "./pages/signup-page/SignupForm";
 import LoginForm from "./pages/login-page/LoginForm";
-
+import CommentForm from "./components/CommentForm/"
 // GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -46,6 +46,7 @@ function App() {
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="/login" element={<LoginForm />} />
+            <Route path="/comment" element={<CommentForm/>}/>
           </Routes>
 
           <Footer />
