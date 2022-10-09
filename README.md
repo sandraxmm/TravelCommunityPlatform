@@ -15,9 +15,8 @@ The Travel Community Forum allows travels to share their favorite vacation photo
 Clone GitHub repository to local device and seed data with `npm run seed`
 
 ```bash
-  npm install 
-  npm run seed
-  npm run start
+  npm run install
+  npm run develop
 ```
     
 ## Github Repo
