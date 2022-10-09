@@ -3,7 +3,7 @@
         "postText": "Hello from Greece!",
         "postAuthor": "aleenaalexia",
         "postLocation": "Greece",
-         "imagedSelected":"sample_image",
+         "fileInputState":"setFileInputState",
         "comments": [
             {
                 "commentText": "I love Santorini!",
@@ -12,15 +12,15 @@
         ]
     },
     {
-        "postText": "Welcome to Paris!! <3",
-        "postAuthor": "exampleuser123",
-        "postLocation": "Paris",
-         "imagedSelected":"sample_image",
-        "comments": [
-            {
-                "commentText": "Wow, this is beautiful!",
-                "commentAuthor": "user454"
-            }
-        ]
+      "postText": "Welcome to Paris!! <3",
+      "postAuthor": "exampleuser123",
+      "postLocation": "Paris",
+      "fileInputState": "setFileInputState",
+      "comments": [
+        {
+          "commentText": "Wow, this is beautiful!",
+          "commentAuthor": "user454"
+        }
+      ]
     }
 ]
