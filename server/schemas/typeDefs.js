@@ -15,6 +15,7 @@ const typeDefs = gql`
     postAuthor: String
     createdAt: String
     postLocation: String
+    fileInputState: String
     comments: [Comment]!
   }
 
@@ -41,7 +42,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     loginUser(username: String!, password: String!): Auth
-    addPost(postText: String!, postLocation: String!): Post
+    addPost(postText: String!, postLocation: String!, fileInputState: String!): Post
     addComment(postId: ID!, commentText: String!): Post
     removePost(PostId: ID!): Post
   }
