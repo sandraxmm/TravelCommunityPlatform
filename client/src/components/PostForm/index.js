@@ -34,13 +34,21 @@ const PostForm = () => {
         },
     });
 
+    const handleFormSubmit = async (props) => {
 
+        try {
+             const { data } = await addPost({
+        variables: {...setFileInputState},
+      });
+      setPostText("");
+      setPostLocation("");
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault();
+        } catch (err){
+            console.error(err);
+        }
         if(!previewSource) return;
-        uploadImage(previewSource);
-       
+        uploadImage(previewSource); 
+        console.log(previewSource);
     };
 
     const uploadImage = async (base64EncodedImage) => {
