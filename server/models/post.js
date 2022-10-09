@@ -5,7 +5,7 @@ const postSchema = new Schema({
     fileInputState: {
         name: String,
         desc: String,
-        img:
+        setFileInputState:
         {
             data: Buffer,
             contentType: String

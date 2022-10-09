@@ -8,7 +8,7 @@ import { LOGIN_USER } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   //const navigate = useNavigate();
 
   const [userFormData, setUserFormData] = useState({
