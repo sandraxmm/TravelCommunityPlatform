@@ -26,12 +26,12 @@ export const ADD_USER = gql`
 
 export const ADD_POST = gql`
   mutation addPost($postText: String!, $postLocation: String!) {
-    addPost(postText: $postText, postLocation: $postLocation, imageSelected: $imageSelected) {
+    addPost(postText: $postText, postLocation: $postLocation, fileInputeState: $fileInputState) {
       _id
       postText
       postLocation
       postAuthor
-      imageSelected
+      fileInputState
       createdAt
       comments {
         _id

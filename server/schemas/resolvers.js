@@ -51,12 +51,12 @@ const resolvers = {
             return { token, user };
         },
         // create new post
-        addPost: async (parent, { postText, postLocation, imageSelected}, context) => {
+        addPost: async (parent, { postText, postLocation, fileInputState}, context) => {
             if (context.user) {
                 const post = await Post.create({
                     postText,
                     postLocation,
-                    imageSelected,
+                    fileInputState,
                     postAuthor: context.user.username,
                 });
                 await User.findOneAndUpdate(

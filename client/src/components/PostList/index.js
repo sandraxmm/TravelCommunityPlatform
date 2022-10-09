@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const PostList = ({
     posts,
-    postlocation,
+    postLocation,
     showLocation = true,
     showUsername = true,
 }) => {
@@ -27,43 +27,50 @@ const PostList = ({
         return <h3>No Posts Yet</h3>;
     }  
     return (
-        <div>
-            {showLocation && <h3>{postlocation}</h3>}
-            {posts &&
-                posts.map((post) => (
-                <div key={post._id} className=''>
-                    <h4 className=''>
-                        {showUsername ? (
-                            <Link className='' to={`/profiles/${post.postAuthor}`}>
-                                {post.postAuthor} <br />
-                                <span style={{fontSize: '1rem' }}>
-                                    posted this on {post.createdAt}
-                                </span>
-                            </Link>
-                        ) : (
-                            <>
-                                <span style={{ fontSize: '1rem' }}>
-                                    You posted this on {post.createdAt}
-                                </span>
-                            </>
-                        )}
-                    </h4>
-                    {imageIds && imageIds.map((imageId, index) => (
-                        <Image
-                        key={index}
-                        cloudName='dk8rcb4sl'
-                        publicId={imageId}
-                        width='300'
-                        crop='scale'
-                        />
-                    ))}
-                    <div className=''>
-                        <p>{post.postText}</p>
-                    </div>
-                    <Link className='' to={`/posts/${post._id}`}></Link>
-                </div>    
-            ))}
-        </div>
+      <div>
+        {showLocation && <h3>{postLocation}</h3>}
+        {posts &&
+          posts.map((post) => (
+            <div key={post._id} className="card mb-3">
+              <h4 className="card-header bg-primary text-light p-2 m-0">
+                {showUsername ? (
+                  <Link
+                    className="text-light"
+                    to={`/profiles/${post.postAuthor}`}
+                  >
+                    {post.postAuthor} <br />
+                    <span style={{ fontSize: "1rem" }}>
+                      posted this on {post.createdAt}
+                    </span>
+                  </Link>
+                ) : (
+                  <>
+                    <span style={{ fontSize: "1rem" }}>
+                      You posted this on {post.createdAt}
+                    </span>
+                  </>
+                )}
+              </h4>
+              {imageIds &&
+                imageIds.map((imageId, index) => (
+                  <Image
+                    key={index}
+                    cloudName="dk8rcb4sl"
+                    publicId={imageId}
+                    width="300"
+                    crop="scale"
+                  />
+                ))}
+              <div className="card-body bg-light p-2">
+                <p>{post.postText}</p>
+              </div>
+              <Link
+                className="btn btn-primary btn-block btn-squared"
+                to={`/posts/${post._id}`}
+              >Join the discussion...</Link>
+            </div>
+          ))}
+      </div>
     );
 };
 
